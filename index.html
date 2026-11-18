@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratorio de Colores</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header class="cabecera">
+    <h1>🎨 Laboratorio de Colores</h1>
+    <p>¡Mezclá colores y descubrí todos los del círculo cromático!</p>
+    <div class="progreso">
+      <div class="barra"><div id="barra-relleno"></div></div>
+      <span id="progreso-texto">3 de 12 colores</span>
+      <span id="estrellas">⭐ 0</span>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <details class="intro">
+      <summary>¿Qué es cada tipo de color?</summary>
+      <div class="intro-grid">
+        <div>
+          <h3>🌟 Primarios</h3>
+          <p>Son los 3 colores base. No se pueden hacer mezclando otros.</p>
+          <span class="mini" style="background:#E53935"></span><span class="mini" style="background:#FFD60A"></span><span class="mini" style="background:#1E6FE8"></span>
+        </div>
+        <div>
+          <h3>🧪 Secundarios</h3>
+          <p>Se hacen mezclando 2 primarios. ¡Hay 3!</p>
+          <span class="mini" style="background:#FF8A00"></span><span class="mini" style="background:#2EA84F"></span><span class="mini" style="background:#8E44D6"></span>
+        </div>
+        <div>
+          <h3>🌈 Terciarios</h3>
+          <p>Se hacen mezclando un primario con un secundario vecino. ¡Hay 6!</p>
+          <span class="mini" style="background:#F4511E"></span><span class="mini" style="background:#FFB300"></span><span class="mini" style="background:#B5D334"></span><span class="mini" style="background:#14A8B8"></span><span class="mini" style="background:#4B4BD6"></span><span class="mini" style="background:#C2185B"></span>
+        </div>
+      </div>
+    </details>
+
+    <div class="tablero">
+
+      <div class="columna">
+        <section class="panel">
+          <h2>Tu paleta</h2>
+          <p class="ayuda">Tocá un color para ponerlo en la olla.</p>
+          <div id="paleta"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Círculo cromático</h2>
+          <div id="rueda" class="rueda"></div>
+        </section>
+
+        <button id="btn-reiniciar" class="btn chico">🔄 Empezar de nuevo</button>
+      </div>
+
+      <div class="columna">
+        <section class="panel">
+          <h2>La olla de mezclas</h2>
+          <div id="desafio" class="desafio" hidden></div>
+          <div class="olla">
+            <div id="slots" class="slots"></div>
+            <span class="igual">=</span>
+            <div id="vista-previa" class="vista-previa">?</div>
+          </div>
+          <div class="botones">
+            <button id="btn-mezclar" class="btn principal">🧪 ¡Mezclar!</button>
+            <button id="btn-limpiar" class="btn">🧹 Limpiar</button>
+            <button id="btn-desafio" class="btn">🎯 Jugar desafío</button>
+          </div>
+        </section>
+
+        <section id="resultado" class="panel resultado" aria-live="polite"></section>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="juego.js"></script>
+</body>
+</html>
